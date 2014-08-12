@@ -1,0 +1,100 @@
+/*RELACIONADO AL LOS EFECTOS ICONOS DE LA LLAMADA 0 Colgado, 4 Timbrando, 6 habalndo*/
+@-webkit-keyframes color_change {
+	from { background-color: blue; }
+	to { background-color: red; }
+}
+@-moz-keyframes color_change {
+	from { background-color: blue; }
+	to { background-color: red; }
+}
+@-ms-keyframes color_change {
+	from { background-color: blue; }
+	to { background-color: red; }
+}
+@-o-keyframes color_change {
+	from { background-color: blue; }
+	to { background-color: red; }
+}
+@keyframes color_change {
+	from { background-color: blue; }
+	to { background-color: red; }
+}
+
+.state-ring {
+	-webkit-animation: color_change 1s infinite alternate;
+	-moz-animation: color_change 1s infinite alternate;
+	-ms-animation: color_change 1s infinite alternate;
+	-o-animation: color_change 1s infinite alternate;
+	animation: color_change 1s infinite alternate;
+}
+.state-answer {
+/*	background-color:green;*/
+}
+.state-hangup {
+	background-color: red;
+}
+/***************************************************************************/
+#panelIngreso-css .table{
+	width:100%;
+}
+
+#panelIngreso-css .table th{
+	font-size: 0.8em;
+	text-align: center;
+	padding: 0;
+}
+
+#panelIngreso-css .table td{
+	font-size: 0.9em;
+	text-align: center;
+	padding: 0.3em 0.3em;
+	vertical-align: middle;
+}
+
+#panelIngreso-css .td-basic{
+	width: 1%;
+}
+
+#panelIngreso-css .customer-phone {
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	padding: 0.3em 0.3em;
+}
+
+#panelIngreso-css .input-customer-name {
+	font-size: 1.2em;
+	padding: 0 0.3em;
+	margin : 0;
+	font-weight:bold;
+	width: 95%;
+}
+
+#panelIngreso-css .input-customer-address{
+	font-size: 1.2em;
+	padding: 0 0.3em;
+	margin : 0;
+	font-weight:bold;
+	width: 95%;
+/*	width: 180px;*/
+}
+
+#panelIngreso-css .input-customer-address-reference{
+	font-size: 1.2em;
+	padding: 0 0.3em;
+	margin : 0;
+	font-weight:bold;
+	width: 95%;
+}
+
+#panelIngreso-css .input-customer-comments {
+	font-size: 0.9em;
+	padding: 0 0.3em;
+	margin : 0;
+	width: 95%;
+}
+
+#panelIngreso-css .social-box .body {
+	height: 314px;
+  overflow-y: auto;
+}

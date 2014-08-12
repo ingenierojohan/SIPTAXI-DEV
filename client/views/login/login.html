@@ -1,0 +1,70 @@
+<template name="login">
+	<div id="login-body">
+		<!-- BEGIN FORMS CONTAINER -->
+		<div class="container">
+
+		<!-- BEGIN LOGIN FORM -->
+			<div class="form-login">
+					<div class="row-fluid">
+						<span class="label label-warning pull-right span12">
+							<h1 class="form-heading">SIP-TAXI</h1>
+						</span>
+					</div>
+					<br>
+					<div class="body">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a id="liTabAgent" href="#tabLoginAgent" data-toggle ="tab">Agente</a>
+							</li>
+							<li >
+								<a id="liTabAdmin" href="#tabLoginAdmin" data-toggle ="tab">Administrador</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div id="tabLoginAgent" class="tab-pane active">
+								{{> loginFormAgent}}
+							</div>
+							<div id="tabLoginAdmin" class="tab-pane">
+								{{> loginFormAdmin}}
+							</div>
+						</div>
+					</div>
+			</div>	<!-- END LOGIN FORM -->
+
+			<!-- BEGIN FOOTER -->
+			<div class="alert {{loginAlert.alert}}">
+				<p><h4 class="text-center">{{loginAlert.title}}</h4></p>
+				<small><p class="text-center">{{loginAlert.message}}</p></small>
+			</div>	<!-- END FOOTER -->
+
+		</div>	<!-- END FORMS CONTAINER -->
+	</div>
+</template>
+
+<!-- TEMPLATE LOGIN FORM AGENT -->
+<template name = "loginFormAgent">
+	<form id="formAgent">
+		<div class="row-fluid">
+			<input id="inputUsernameAgent" type="text" class="input-block-level" placeholder="Agente" autofocus>
+			<input id="inputPasswordAgent" type="password" class="input-block-level" placeholder="Clave">
+		</div>
+
+		<div class="row-fluid">
+			<button class="btn btn-success pull-right span12" type="submit">Ingresar</button>
+		</div>
+	</form>
+</template>
+
+<!-- TEMPLATE LOGIN FORM ADMIN -->
+<template name = "loginFormAdmin">
+	<form id="formAdmin">
+		<div class="row-fluid">
+			<input id="inputUsernameAdmin" type="text" class="input-block-level" placeholder="Administrador" autofocus>
+			<input id="inputPasswordAdmin" type="password" class="input-block-level" placeholder="Clave">
+		</div>
+
+		<div class="row-fluid">
+			<button class="btn btn-warning pull-right span12" type="submit">Ingresar</button>
+		</div>
+	</form>
+</template>

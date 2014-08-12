@@ -1,0 +1,81 @@
+<template name ="reporteGerencia">
+
+	<div id="dashboard-css">
+		<!-- BEGIN MAIN CONTAINER -->
+		<div id="main">
+			<!-- BEGIN CONTENT CONTANER -->
+			<div class="container-fluid">
+
+				<div class="row-fluid">
+					<!-- BEGIN ERROR 500 CONTENT -->
+					<div class="error-500">
+						<i class="icon-envelope icon-4x error-icon"></i>
+						<h1>Reporte Gerencia</h1>
+						<span class="text-error"><strong>Hola {{usernameAgent}}</strong></span>
+						<p><small>Ingresa Las novedades durante su Turno,  para ser Enviadas a la Gerencia</small></p>
+					</div>
+					<!-- END ERROR 500 CONTENT -->
+				</div>
+
+				<div class="row-fluid">
+					<div class="span6">
+						<article class="social-box">
+							<header>
+								<h4><i class="icon-desktop"></i> Servicio Individual</h4>
+							</header>
+							<div class="body">
+								<div class="input-append">
+									<input  class="input-block-level" id="" type="text"/>
+									<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-plus-sign icon-white"></i></a>
+								</div>
+								<div class="textarea">
+									<textarea name="" id="" cols="30" rows="10"></textarea>
+								</div>
+							</div>
+
+							<footer>
+								<p>
+								Total Servicios Turno :<br>
+								Total Servicios Dia :<br>
+								Total Servicios Cancelados Turno :<br>
+								</p>
+							</footer>
+						</article>
+					</div>
+
+					<div class="span6">
+						<article class="social-box">
+							<header>
+								<div class="title-right">
+								<h4>Servicio Colectivo <i class="icon-desktop"></i></h4>
+								</div>
+							</header>
+							<div class="body">
+								<div class="input-append">
+									<input  class="input-block-level" id="" type="text"/>
+									<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-plus-sign icon-white"></i></a>
+								</div>
+								<div class="textarea">
+									<textarea name="" id="" cols="30" rows="10"></textarea>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+			<!-- END CONTENT CONTAINER -->
+			<!-- BEGIN PAGE FOOTER -->
+			<footer id="footer">
+				<div class="container-fluid">
+					<p class="text-center"><button class="btn btn-primary">Enviar Correo</button></p>
+				</div>
+			</footer>
+			<!-- END PAGE FOOTER -->
+		</div>
+	</div>
+</template>

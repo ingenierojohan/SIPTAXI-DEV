@@ -1,0 +1,31 @@
+<template name ="dashboardAgent">
+	<div id="dashboardAgent-css">
+		<div class="wraper">
+			{{> navbarAgent}}
+			<div id="main">
+				<!-- Contenerdor Panel Ingreso -->
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span12">
+							{{> panelIngreso}}
+						</div>
+					</div>
+				</div>
+
+				{{> panelNotificaciones}}
+
+				<!-- Contenerdor Panel Servicios -->
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span12">
+						{{> panelServicios}}
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</template>

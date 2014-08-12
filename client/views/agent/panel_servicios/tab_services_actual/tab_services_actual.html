@@ -1,0 +1,42 @@
+<template name='tabServicesActual'>
+
+	<div id="tab-services-actual-css">
+		<!-- BEGIN TABLE DATA -->
+		<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-condensed">
+			<!-- BEGIN -->
+			<thead>
+			<tr>
+				<th>NRO</th>
+				<th>DIA</th>
+				<th>AGENTE</th>
+				<th>ESTADO</th>
+				<th>H-LLAM</th>
+				<th>H-ASIG</th>
+				<th>TELEFONO</th>
+				<th>NOMBRE</th>
+				<th>DIRECCION</th>
+				<th>REFERENCIA</th>
+				<th>NOTAS CLIENTE</th>
+				<th>COD</th>
+				<th>NOTAS SERVICIO</th>
+				<th>MOVIL Turno</th>
+				<th>MOVIL</th>
+				<th>ACCIONES</th>
+			</tr>
+			</thead>
+			<!-- END -->
+		
+			<!-- ################### TBODY ###################  -->
+			<!-- BEGIN -->
+			<tbody>
+			{{# each servicesActual}}
+				{{> tabServicesActualRow}}
+			{{/each}}
+			</tbody>
+			<!-- ################### END tbody ###################  -->
+
+		</table>
+		<!-- END TABLE DATA -->
+	</div>
+
+</template>

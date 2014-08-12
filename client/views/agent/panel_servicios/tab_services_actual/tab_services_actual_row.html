@@ -1,0 +1,202 @@
+<template name = "tabServicesActualRow">
+	<tr class="{{serviceRowStatus.rowColor}}">
+
+		<!-- CONTADOR SERV DIA -->
+		<td class="td-basic"><span class="service-num-total">{{countService.total}}</span></td>
+
+		<td class="td-basic"><span class="service-num-day">{{countService.day}}</span></td>
+
+		<!-- AGENTE -->
+		<td class="td-basic">{{agentName}}</td>
+
+		<!-- ESTADO  -->
+		<td class="td-basic"><span class ="label {{serviceRowStatus.estadoColor}} services-estado">{{serviceRowStatus.estadoText}}</span></td>
+
+		<!-- Hora LLAMADA  -->
+		<td class="td-basic services-estado"><strong>{{serviceRowStatus.timeLaunch}}</strong></td>
+
+		<!-- Hora ASIGNACION  -->
+		<td class="td-basic services-estado"><strong>{{serviceRowStatus.timeAllocate}}</strong></td>
+
+		<!-- TELEFONO  -->
+		{{#if customerPhone}}
+		<!-- Si el servicio es Manual se puede Agragar el Telefono o Guardar el Contacto -->
+			<td class="td-basic"><span class ="customer-phone label {{serviceRowStatus.estadoColor}}">{{formatCustomerPhone customerPhone}}</span></td>
+
+		{{else}}
+				<td><input type="text" id="customerPhone-{{_id}}" class="inputCustomerPhone input-tab-services-actual-phone"/></td>
+
+		{{/if}}
+
+
+		<!-- NOMBRE-->
+		<td><input type="text" id="customerName-{{_id}}" class="inputCustomer input-tab-services-actual typeaheadCustomerName" value="{{customerName}}"/></td>
+
+		<!-- DIRECCION -->
+		<td><input type="text" id="customerAddress-{{_id}}" class="inputCustomer inputCustomerAddress input-tab-services-actual" value="{{customerAddress}}"/></td>
+
+		<!-- REFERENCIA-->
+		<td><input type="text" id="customerAddressReference-{{_id}}" class="inputCustomer input-tab-services-actual typeaheadCustomerAddressReference" value="{{customerAddressReference}}"/></td>
+
+		<!-- COMENTARIOS CLIENTE-->
+		<td><input type="text" id="customerComments-{{_id}}" class="inputCustomer input-tab-services-actual-comments" value="{{customerComments}}"/></td>
+
+		<!-- CODIGO TELEFONICO -->
+		<td class="td-basic"><span class ="badge badge-default">{{customerCod}}</span></td>
+
+		<!-- COMENTARIOS SERVICIO-->
+		<td><input type="text" id="serviceComments-{{_id}}" class="inputCustomer input-tab-services-actual-comments" value="{{comments}}"/></td>
+
+		<!-- MUESTRA SOLO EN PENDIENTES -->
+		{{#if btnPendiente}}
+			<!-- MOVIL y PLACA TURNO-->
+			<td class="td-movil-turno">
+				<div class="form-group">
+					<span class="tab-services-actual-movil"> 000 - XXX000</span>
+					<div class="btn-group">
+						<button class="btn btn-mini btn-success" id=""><i class="icon-ok icon-white"></i></button>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-mini btn-danger" id=""><i class="icon-remove icon-white"></i></button>
+						<button class="btn btn-mini btn-info" id=""><i class="icon-info-sign icon-white"></i></button>
+					</div>
+				</div>
+			</td>
+
+			<!-- MOVIL y PLACA MANUAL-->
+			<td class="td-movil-manual">
+				<div class="form-group">
+					<input type="text" id="movil-{{_id}}" data-provide="typeahead" data-source= '[{{movilYplaca}}]' class="input-tab-services-actual-movil" placeholder="Movil..."/>
+					<div class="btn-group">
+						<button class="btn btn-mini btn-info" id="btnAsignar">AS</button>
+					</div>
+				</div>
+			</td>
+
+			<!-- Botones de ACCIONES -->
+			<td class="td-basic">
+				<div class="btn-group">
+					<div class="btn-group">
+						<button class="btn btn-mini btn-danger" id="btnCancelar">CN</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-mini btn-success" id="btnSaveCustomer">G</button>
+					</div>
+				</div>
+			</td>
+		<!-- MUESTRA ASIGANDO -->
+		{{else}}
+			<!-- MOVIL y PLACA TURNO-->
+			<td class="td-movil-turno"></td>
+			<!-- MOVIL y PLACA -->
+			<td class="td-movil-manual"><span id="movil-{{_id}}" class ="phone-service label {{serviceRowStatus.estadoColor}}">{{taxiMovil}} -- {{taxiPlaca}}</span></td>
+
+			<!-- Botones de ACCIONES -->
+			<td class="td-basic">
+				<div class="btn-group">
+					<div class="btn-group">
+						<button class="btn btn-mini btn-success" id="btnFinalizar">OK</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-mini btn-primary" id="btnReasignar">RA</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-mini btn-danger" id="btnCancelar">CN</button>
+					</div>
+				</div>
+			</td>
+		{{/if}}
+	</tr>
+
+
+
+
+<!-- MODAL CANCELAR SERVICIO -->
+	<div id="CAModal-{{_id}}" class="modal hide fade CA-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="badge badge-important">X</span></button>
+			<h3 id="myModalLabel" class="text-center alert alert-error">CANCELACIÓN del SERVICIO</h3>
+		</div>
+		<div class="modal-body">
+			<!-- CANCELACION RAZON -->
+			<p class="text-center">
+				<label>Ingrese el Motivo de la Cancelacion del Servicio</label>
+				<textarea rows="5" id="CAmodalReason-{{_id}}"></textarea>
+			</p>
+		</div>
+		<div class="modal-footer">
+			<div class="control-group text-center">
+				<button id="btnCAModal-{{_id}}" class="btn btn-danger">CANCELAR ESTE SERVICIO</button>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<!-- MODAL REASIGNAR MOVIL -->
+	<div id="RAModal-{{_id}}" class="modal hide fade RA-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="badge badge-important">X</span></button>
+			<h3 id="myModalLabel" class="text-center alert alert-info">RE-ASIGNAR el SERVICIO</h3>
+		</div>
+		<div class="modal-body">
+		
+					<!-- REAASIGNACION RAZON -->
+			<p class="text-center">
+				<label>Ingrese el Motivo de la Nueva Asignación</label>
+				<textarea rows="5" id="RAmodalReason-{{_id}}"></textarea>
+			</p>
+<!-- TURNO-->
+			<p class="text-center">
+				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-condensed">
+					<thead>
+						<tr>
+							<th>MOVIL TURNO</th>
+							<th>MOVIL MANUAL</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<!-- MOVIL TURNO -->
+							<td class="td-movil-turno">
+								<div class="form-group">
+									<span class="tab-services-actual-movil"> 000 - XXX000</span>
+									<div class="btn-group">
+										<button class="btn btn-mini btn-success" id=""><i class="icon-ok icon-white"></i></button>
+									</div>
+									<div class="btn-group">
+										<button class="btn btn-mini btn-danger" id=""><i class="icon-remove icon-white"></i></button>
+									</div>
+
+									<div class="btn-group">
+										<button class="btn btn-mini btn-info" id=""><i class="icon-info-sign icon-white"></i></button>
+									</div>
+								</div>
+							</td>
+
+							<!-- MOVIL MANUAL -->
+							<td class="td-movil-manual">
+								<div class="form-group">
+									<input type="text" id="inputRAmodalMovil-{{_id}}" data-provide="typeahead" data-source= '[{{movilYplaca}}]' class="input-modal-reallocate-movil" placeholder="Movil..."/>
+									<div class="btn-group">
+										<button class="btn btn-mini btn-primary" id="btnRAModal-{{_id}}">RE-ASIGNAR</button>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</p>
+		</div>
+		<div class="modal-footer">
+		<!-- PANEL NOTIFICACIONES MODAL REASIGNAR -->
+			<div class="{{panelNotificacionesModal.classAlert}}">
+				<p class="text-center">
+					<span class="{{panelNotificacionesModal.classLabel}}">{{panelNotificacionesModal.mensaje}}</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</template>

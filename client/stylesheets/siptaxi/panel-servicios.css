@@ -1,0 +1,157 @@
+/***** TAB SERVICIOS ACTUAL ******/
+#tab-services-actual-css .table{
+	width:100%;
+}
+
+#tab-services-actual-css .table th{
+	font-size: 0.8em;
+	text-align: center;
+	padding: 0;
+}
+
+#tab-services-actual-css .table td{
+	font-size: 0.9em;
+	text-align: center;
+	padding: 0.3em 0.3em;
+	vertical-align: middle;
+}
+
+#tab-services-actual-css .td-basic{
+	width: 1%;
+}
+
+#tab-services-actual-css .td-movil-manual{
+	width: 120px;
+}
+
+#tab-services-actual-css .td-movil-turno{
+	width: 170px;
+}
+
+#tab-services-actual-css td .input-tab-services-actual{
+	font-size: 0.8em;
+	padding: 0 0.2em;
+	font-weight: bold; 
+	width: 95%;
+	vertical-align: middle;
+	margin : 0;
+}
+
+#tab-services-actual-css .input-tab-services-actual-phone{
+	font-size: 0.9em;
+	padding: 0 0.2em;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	width: 90%;
+	vertical-align: middle;
+	margin : 0;
+	text-align: center;
+}
+
+#tab-services-actual-css td .input-tab-services-actual-comments{
+	font-size: 0.8em;
+	padding: 0 0.2em;
+	width: 95%;
+	vertical-align: middle;
+	margin : 0;
+}
+
+#tab-services-actual-css td .customer-phone {
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	padding: 0.1em 0.1em;
+}
+
+#tab-services-actual-css td .services-estado {
+	font-size: 0.9em;
+	text-align: center;
+	padding: 0.2em 0.2em;
+	margin: 0;
+	vertical-align: middle;
+}
+
+/*---- RELACIONADO CON EL MODAL CANCELAR ---- */
+#tab-services-actual-css .CA-Modal {
+	width: 500px;
+}
+
+#tab-services-actual-css .CA-Modal .modal-body {
+    max-height: 170px;
+}
+
+#tab-services-actual-css .CA-Modal textarea{
+	resize: none;
+	width:90%;
+	font-size: 2em;
+	font-weight: bold
+}
+/*---------------------------------------------*/
+
+/*---- RELACIONADO CON EL MODAL RE-ASIGNAR ---- */
+#tab-services-actual-css .RA-Modal {
+	width: 500px;
+}
+
+#tab-services-actual-css .RA-Modal .modal-body {
+	max-height: 300px;
+}
+
+#tab-services-actual-css .RA-Modal textarea{
+	resize: none;
+	width:90%;
+	font-size: 2em;
+	font-weight: bold
+}
+
+#tab-services-actual-css .RA-Modal .modal-body .td-movil-turno{
+	width: 200px;
+}
+
+
+#tab-services-actual-css .RA-Modal .modal-body .td-movil-manual{
+	width: 200px;
+}
+
+#tab-services-actual-css .RA-Modal .modal-body .input-modal-reallocate-movil{
+	font-size: 1.2em;
+	padding: 0 0.2em;
+	font-weight: bold;
+	margin : 0;
+	vertical-align: middle;
+	text-align: center;
+	width: 120px;
+}
+
+/*---------------------------------------------*/
+
+
+
+#tab-services-actual-css td .input-tab-services-actual-movil{
+	font-size: 0.9em;
+	padding: 0 0.2em;
+	font-weight: bold;
+	margin : 0;
+	vertical-align: middle;
+	text-align: center;
+	width: 80px;
+}
+
+#tab-services-actual-css td .tab-services-actual-movil{
+	font-size: 1em;
+	padding: 0 0.2em;
+	font-weight: bold;
+	margin : 0;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#tab-services-actual-css td .service-num-total{
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+#tab-services-actual-css td .service-num-day{
+	font-size: 0.8em;
+	font-weight: bold;
+}

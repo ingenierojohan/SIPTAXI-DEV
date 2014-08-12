@@ -1,0 +1,57 @@
+<template name = "navbarAgent">
+	<header>
+		<nav class="navbar navbar-blue navbar-fixed-top social-navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid navbarAgent">
+					<!-- BEGIN BRAND LINK -->
+					<span class="brand label label-success"><i class="icon-headphones"></i>&nbsp;&nbsp;{{usernameAgent}}</span>
+					<!-- END BRAND LINK -->
+
+					<!-- NAV IZQUIERDO -->
+					<ul class="nav nav-indicators">
+						<!-- HORA -->
+						<li class="divider-vertical"></li>
+						<li class="brand"><i class="icon-time"></i>&nbsp;&nbsp;<strong>{{horaSistema}}</strong></li>
+						<li class="divider-vertical"></li>
+
+						<li>
+							<!-- BOTON REPORTES -->
+							<div class="btn-group">
+								<a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-envelope icon-white"></i> Reportes <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="{{pathFor 'reporteGerencia'}}" target="_blank"><i class="icon-user"></i>  Turno Gerencia</a></li>
+									<li class="divider"></li>
+									<li><a href="/new-window" target="_blank"><i class="icon-file"></i>  Novedades</a></li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<!-- BOTON REPORTES -->
+							<div class="btn-group">
+								<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-road icon-white"></i> Control <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="/new-window" target="_blank">Turnos Individual</a></li>
+									<li class="divider"></li>
+									<li><a href="/new-window" target="_blank">Colectivos</a></li>
+									<li><a href="/new-window" target="_blank">Abando de Ruta</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="divider-vertical"></li>
+					</ul>
+
+					<!-- NAV DERECHO -->
+					<ul class="nav nav-indicators pull-right">
+						<!-- LOG OUT -->
+						<li class="divider-vertical"></li>
+							<a href="#" class="btn btn-danger" id="btnSalir"><i class="icon-off"></i>&nbsp;&nbsp;SALIR</a>
+					</ul>
+					<!-- END NAVBAR DERECHO -->
+				</div>
+			</div>
+		</nav>
+	</header>
+</template>

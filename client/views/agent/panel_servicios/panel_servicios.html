@@ -1,0 +1,31 @@
+<template name='panelServicios'>
+	<div id="panelServicios-css">
+		<article class="social-box">
+			<header>
+
+				<h4><i class="icon-desktop icon-large"></i></h4>
+
+				<button id="btnNewService" class="btn btn-small "><i class="icon-plus-sign icon-white"></i> Servicio</button>
+
+				<span class="btn-small">Agente:  {{countServicesAgent}}</span>
+				<span class="btn-small">Total Dia:  {{countServicesDay}}</span>
+
+				<div class="tools">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#servicesActual" data-toggle="tab">Servicios Actuales</a></li>
+						<li><a href="#servicesDay" data-toggle="tab">Servicios del Día</a></li>
+						<li><a href="#servicesAll" data-toggle="tab">Busquedas</a></li>
+					</ul>
+				</div>
+			</header>
+			<div class="body ">
+					<div class="tab-content">
+						<div class="tab-pane active" id="servicesActual">{{> tabServicesActual }}</div>
+						<div class="tab-pane" id="servicesDay"><!-- {{> tabServicesDay }} --></div>
+						<div class="tab-pane" id="servicesAll"><!-- {{> tabSearch}} --></div>
+					</div>
+			</div>
+		</article>
+	</div>
+
+</template>

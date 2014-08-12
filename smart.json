@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "npm": {},
+    "iron-router": {},
+    "spin": {},
+    "moment": {},
+    "fast-render": {},
+    "numeral": {}
+  }
+}

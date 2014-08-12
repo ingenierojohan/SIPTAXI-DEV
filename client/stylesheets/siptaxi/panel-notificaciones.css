@@ -1,0 +1,16 @@
+.panel-notificaciones {
+	padding: 0;
+	margin: 0;
+}
+.panel-notificaciones .alert{
+	padding: 0.3em 0em;
+	margin: 0;
+}
+
+.panel-notificaciones p{
+	padding: 0;
+	margin: 0;
+}
+.panel-notificaciones span{
+	font-size: 1em;
+}

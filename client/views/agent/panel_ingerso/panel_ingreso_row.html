@@ -1,0 +1,38 @@
+<!-- ******************************  TEMPLATE FILA *************************************** -->
+<template name = "panelIngresoRow">
+	<tr class="{{rowColor.row}}">
+			<!-- CALL STATES -->
+			<td class="td-basic"><span class="badge badge-{{rowColor.badge}} {{stateCalls.state}}"><i class={{stateCalls.icon}}></i>{{stateCalls.desc}}</span></td>
+
+			<!-- Info Last Call -->
+			<td class="td-basic"> <a href="#" id="lastCall-{{_id}}" class ="lastCall"><span class ="badge badge-{{rowColor.badge}}"> {{siptaxiCallCount}}</span></a></td>
+
+			<!-- Info Telefono  -->
+			<td class = "td-basic"><span class ="customer-phone label label-{{rowColor.badge}}">{{formatCustomerPhone customerPhone}}</span></td>
+
+			<!-- Info Last Services -->
+			<td class = "td-basic"> <a href="#" id="lastServices-{{_id}}" class="lastServices"><span class ="badge badge-{{rowColor.badge}}">{{serviceCount}}</span></a></td>
+			
+
+
+			<!-- Info Name Customer-->
+			<td><input type="text" class="input-customer-name typeaheadCustomerName" value="{{customerName}}" placeholder ="Nombre del Usuario" id="customerName-{{_id}}"/></td>
+			
+			<!-- Info de la Direccion -->
+			<td><input type="text" class="input-customer-address" value="{{customerAddress}}" placeholder = "CRA 00 00 00" id="customerAddress-{{_id}}"/></td>
+
+			<!-- Campo de Referencia y Busqueda-->
+			<td><input type="text" class="input-customer-address-reference typeaheadCustomerAddressReference" value="{{customerAddressReference}}" placeholder="Barrio-Sector-Referencia" id="customerAddressReference-{{_id}}"/></td>
+			
+			<!-- Field Comentarios del Cliente -->
+			<td> <input type="text" class="input-customer-comments" value="{{customerComments}}" placeholder="Notas del Usuario" id="customerComments-{{_id}}"/> </td>
+
+			<!-- Field Codigo Telefonico -->
+			<td class = "td-basic"><span class ="badge badge-default">{{customerCod}}</span></td>
+			
+			<td class = "td-basic"><button class="btn btn-mini btn-inverse" id="btnLanzar">LANZAR</button></td>
+		
+
+	</tr>
+</template>
+<!-- ##################################################################################### -->
