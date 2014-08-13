@@ -7,7 +7,8 @@
       "spin": {},
       "moment": {},
       "fast-render": {},
-      "numeral": {}
+      "numeral": {},
+      "filter-collections": {}
     },
     "packages": {
       "npm": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/vsivsi/meteor-numeral.git",
         "tag": "v1.5.3",
         "commit": "bdc97fc69bee7dadae1fc0f97fa6d9d76a03e73d"
+      },
+      "filter-collections": {
+        "git": "https://github.com/julianmontagna/filter-collections.git",
+        "tag": "v0.1.4",
+        "commit": "87bc9cee7a23459e427d4613383be3f67f29245c"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

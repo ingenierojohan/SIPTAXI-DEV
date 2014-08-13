@@ -57,6 +57,14 @@ Template.tabServicesActualRow.events({
 	},// FIN del Evento -----------
 	//--------------------------------------------------------------------------
 
+	// EVENTO BTN DELETE --- Solo en Estado Pendiente
+	'click #btnDelete' : function(evt, temp){
+		evt.preventDefault();
+		btnDelete(this);
+	},// FIN del Evento -----------
+	//--------------------------------------------------------------------------
+
+
 	// EVENTO BTN GUARDAR --- Cuando hay un CLICK en el BTN Guaradar, se Guarada Cliente y se borra Servicio
 	'click #btnSaveCustomer' : function(evt, temp){
 		evt.preventDefault();
@@ -294,6 +302,15 @@ function btnSave(data){
 	servicesRemove(data._id, data.customerPhone);
 };
 //********************************************************************************
+
+
+//--------------------------------------------------------------------------------
+// Funcion para Quitar el Registro de Pendientes
+function btnDelete (data){
+	servicesRemove(data._id, data.customerPhone);
+}
+//********************************************************************************
+
 
 //--------------------------------------------------------------------------------
 // Funcion para ASIGANR EL SERVICIO

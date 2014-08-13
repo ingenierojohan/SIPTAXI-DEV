@@ -64,7 +64,7 @@ Template.panelIngresoRow.events({
 		return statusInfo
 		}
 		// Forma de encabezado Ultimo y Penultimo
-		var ultimoOpenultimo = ['>>> PENULTIMO <<<', '>>> ULTIMO <<<'];
+		var ultimoOpenultimo = ['>>> ULTIMO <<<', '>>> PENULTIMO <<<'];
 		for (var key in services){
 			// Validamos si existe un timeAllocate, esto es para los servicios que quedaron en status pendiente.
 			if(services[key].timeAllocate == null){

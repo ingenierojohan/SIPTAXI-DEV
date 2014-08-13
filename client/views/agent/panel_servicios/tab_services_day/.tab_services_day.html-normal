@@ -1,0 +1,55 @@
+<template name="tabServicesDay">
+	<div id="tab-services-day-css">
+		<table id="tableServicesDay" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-condensed">
+			<!-- BEGIN -->
+			<thead>
+				<tr>
+					<th>NRO</th>
+					<th>DIA</th>
+					<th>AGENTE</th>
+					<th>ESTADO</th>
+					<th>H-ASIG</th>
+					<th>H-FINAL</th>
+					<th></th>
+					<th>TELEFONO</th>
+					<th>NOMBRE</th>
+					<th>DIRECCION</th>
+					<th>REFERENCIA</th>
+					<th>NOTAS CLIENTE</th>
+					<th>COD</th>
+					<th></th>
+					<th>MOVIL</th>
+					<th>PLACA</th>
+					<th>NOTAS SERVICIO</th>
+				</tr>
+			</thead>
+			<!-- END -->
+
+			<!-- ################### TBODY ###################  -->
+			<!-- BEGIN -->
+			<tbody>
+				{{#each servicesDay}}
+					<tr>
+						<td>{{serviceNum.total}}</td>
+						<td>{{serviceNum.day}}</td>
+						<td>{{agentName}}</td>
+						<td>{{status}}</td>
+						<td>{{timeAllocate}}</td>
+						<td>{{timePickup}}</td>
+						<td></td>
+						<td>{{customerPhone}}</td>
+						<td>{{customerName}}</td>
+						<td>{{customerAddress}}</td>
+						<td>{{customerAddressReference}}</td>
+						<td>{{customerComments}}</td>
+						<td>{{customerCod}}</td>
+						<td></td>
+						<td>{{taxiMovil}}</td>
+						<td>{{taxiPlaca}}</td>
+						<td>{{comments}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>

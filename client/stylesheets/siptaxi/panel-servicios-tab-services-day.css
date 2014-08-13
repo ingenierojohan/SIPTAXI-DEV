@@ -1,0 +1,87 @@
+/***** TAB SERVICES DAY ******/
+#tab-services-day-css .table{
+	width:100%;
+}
+
+#tab-services-day-css .table th{
+	font-size: 0.8em;
+	text-align: center;
+	padding: 0;
+}
+
+#tab-services-day-css .table td{
+	font-size: 0.8em;
+	text-align: center;
+	padding: 0.3em 0.3em;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+#tab-services-day-css .td-basic{
+	width: 1%;
+}
+
+#tab-services-day-css .td-movil-manual{
+	width: 120px;
+}
+
+#tab-services-day-css .td-movil-turno{
+	width: 170px;
+}
+
+
+#tab-services-day-css td .service-num-total{
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+#tab-services-day-css td .service-num-day{
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+#tab-services-day-css td .customer-phone {
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	padding: 0.1em 0.1em;
+}
+
+#tab-services-day-css  .taxi-movil {
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	padding: 0.1em 0.3em;
+}
+
+#tab-services-day-css  .customer-cod {
+	font-size: 1em;
+	vertical-align: middle;
+	padding: 0.1em 0.3em;
+}
+
+#tab-services-day-css  .taxi-placa {
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	padding: 0.1em 0.2em;
+}
+
+#tab-services-day-css td .services-estado {
+	font-size: 0.9em;
+	text-align: center;
+	padding: 0.2em 0.2em;
+	margin: 0;
+	vertical-align: middle;
+}
+
+#tab-services-day-css td .tab-services-actual-movil{
+	font-size: 1em;
+	padding: 0 0.2em;
+	font-weight: bold;
+	margin : 0;
+	vertical-align: middle;
+	text-align: center;
+}
+
+

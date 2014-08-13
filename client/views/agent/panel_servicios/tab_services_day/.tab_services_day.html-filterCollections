@@ -1,0 +1,64 @@
+<template name="tabServicesDay">
+	<div id="tab-services-day-css">
+		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-condensed">
+			<!-- BEGIN -->
+			<thead>
+				<tr>
+					<th class="fc-sort" data-fc-sort="serviceNum.total">
+						NRO
+						{{#if fcSort.serviceNum.total.desc}}(desc){{/if}}
+						{{#if fcSort.serviceNum.total.asc}}(asc){{/if}}
+					</th>
+					<th>DIA</th>
+					<th>AGENTE</th>
+					<th class="fc-sort" data-fc-sort="status">
+						ESTADO
+						{{#if fcSort.status.desc}}(desc){{/if}}
+						{{#if fcSort.status.asc}}(asc){{/if}}
+					</th>
+					<th>H-ASIG</th>
+					<th>H-FINAL</th>
+					<th></th>
+					<th>TELEFONO</th>
+					<th>NOMBRE</th>
+					<th>DIRECCION</th>
+					<th>REFERENCIA</th>
+					<th>NOTAS CLIENTE</th>
+					<th>COD</th>
+					<th></th>
+					<th>MOVIL</th>
+					<th>PLACA</th>
+					<th>NOTAS SERVICIO</th>
+				</tr>
+			</thead>
+			<!-- END -->
+
+			<!-- ################### TBODY ###################  -->
+			<!-- BEGIN -->
+			<tbody>
+				{{#each fcResults}}
+					<tr>
+						<td>{{serviceNum.total}}</td>
+						<td>{{serviceNum.day}}</td>
+						<td>{{agentName}}</td>
+						<td>{{status}}</td>
+						<td>{{timeAllocate}}</td>
+						<td>{{timePickup}}</td>
+						<td></td>
+						<td>{{customerPhone}}</td>
+						<td>{{customerName}}</td>
+						<td>{{customerAddress}}</td>
+						<td>{{customerAddressReference}}</td>
+						<td>{{customerComments}}</td>
+						<td>{{customerCod}}</td>
+						<td></td>
+						<td>{{taxiMovil}}</td>
+						<td>{{taxiPlaca}}</td>
+						<td>{{comments}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		<a href="#" class="fc-sort-clear">LIMPIAR</a>
+	</div>
+</template>

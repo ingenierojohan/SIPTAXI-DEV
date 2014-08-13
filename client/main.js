@@ -89,12 +89,20 @@ Meteor.startup( function () {
 
 // Obtener el Username del Agente
 UI.registerHelper('usernameAgent', function() {
+		if(!Meteor.user().profile.name){
+			return;
+		}
 		return Meteor.user().profile.name
 });
 //-----------------------------------------------------------------------------------------------------
 
 // Formato espacial al Telefono fijo (XXX XX XX), CEL (XXX)XXX XX XX
 UI.registerHelper('formatCustomerPhone', function(phone) {
+
+	if (!phone){
+		return phone="999 99 99";
+	}
+
 	var telefono = phone.toString();
 
 	if (telefono.length==7){

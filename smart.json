@@ -5,6 +5,7 @@
     "spin": {},
     "moment": {},
     "fast-render": {},
-    "numeral": {}
+    "numeral": {},
+    "filter-collections": {}
   }
 }

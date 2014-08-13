@@ -32,14 +32,21 @@ Meteor.publish('movilAndPlaca', function(){
 Meteor.publish('servicesDay', function(){
 	// Hora Actual
 	var now = new Date().getTime();
-	// Definimos las 00 del dia actual
-	var day = moment(now).format('YYYY-MM-DD 00:00:00');
-	//pasamos a timestamp
+
+	// Hora a las 10 pm del dia en curso
+	var day = moment(now).format('YYYY-MM-DD 22:00:00');
 	var dayTimestamp = new Date(day).getTime();
-	// Igualamos a las 22 horas del dia anterior para iniciar a las 10 pm de cada dia
-	dayTimestamp = dayTimestamp - 7200000; // formato en milisegundos, se multiplica por mil
-	console.log('---> SE HAN SUSCRITO A Services Day INICIA a las :',moment(dayTimestamp).format('YYYY-MM-DD HH:mm:ss'),'<---');
-	return Services.find( { timeLaunch : { $gt: dayTimestamp } } );
+
+	// Si la hora actual Ha pasado de las 10 pm se toma el day timestamp
+	if (now > dayTimestamp){
+		var setDay = dayTimestamp;
+	}
+	// si no, se toma desde las 10pm del dia anterior
+	else{
+		var setDay = dayTimestamp - (1000*60*60*24);
+	}
+	console.log('---> SE HAN SUSCRITO A Services Day INICIA a las :',moment(setDay).format('YYYY-MM-DD HH:mm:ss'),'<---');
+	return Services.find( { timeLaunch : { $gt: setDay } } );
 });
 //---------------------------------------------------------------------------------------------------
 
