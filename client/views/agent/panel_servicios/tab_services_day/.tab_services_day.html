@@ -1,0 +1,71 @@
+<template name="tabServicesDay">
+	<div id="tab-services-day-css">
+		<table id="tableServicesDay" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-hover table-bordered table-condensed">
+			<!-- BEGIN -->
+			<thead>
+				<tr>
+					<th>NRO</th>
+					<th>DIA</th>
+					<th>AGENTE</th>
+					<th>ESTADO</th>
+					<th>H-ASIG</th>
+					<th>H-FINAL</th>
+					<th>TELEFONO</th>
+					<th>NOMBRE</th>
+					<th>DIRECCION</th>
+					<th>REFERENCIA</th>
+					<th>NOTAS CLIENTE</th>
+					<th>COD</th>
+					<th>MOVIL</th>
+					<th>PLACA</th>
+					<th>NOTAS SERVICIO</th>
+				</tr>
+			</thead>
+			<!-- END -->
+
+			<!-- ################### TBODY ###################  -->
+			<!-- BEGIN -->
+			<tbody>
+				{{#each servicesDay}}
+					<tr class="{{serviceRowStatus.rowColor}}">
+
+						<!-- CONTADOR SERV DIA -->
+						<td class="td-basic"><span class="service-num-total">{{countService.total}}</span></td>
+						<td class="td-basic"><span class="service-num-day">{{countService.day}}</span></td>
+
+						<!-- AGENTE -->
+						<td class="td-basic">{{agentName}}</td>
+
+						<!-- ESTADO  -->
+						<td class="td-basic"><span class ="label {{serviceRowStatus.estadoColor}} services-estado">{{serviceRowStatus.estadoText}}</span></td>
+
+						<!-- Hora ASIGNACION  o REASIGANCION -->
+						<td class="td-basic services-estado"><strong>{{serviceRowStatus.timeAllocate}}</strong></td>
+
+						<!-- Hora FINALIZACION o Cancelacion-->
+						<td class="td-basic services-estado"><strong>{{serviceRowStatus.timeFinal}}</strong></td>
+
+						<!-- TELEFONO  -->
+						<td class="td-basic">
+							<span class ="label {{serviceRowStatus.estadoColor}}">{{formatCustomerPhone customerPhone}}</span>
+						</td>
+						<!-- NOMBRE-->
+						<td>{{customerName}}</td>
+						<!-- DIRECCION -->
+						<td>{{customerAddress}}</td>
+						<!-- REFERENCIA-->
+						<td>{{customerAddressReference}}</td>
+						<!-- COMENTARIOS CLIENTE-->
+						<td>{{customerComments}}</td>
+						<!-- CODIGO TELEFONICO -->
+						<td class="td-basic"><span class ="customer-cod badge badge-default">{{customerCod}}</span></td>
+						<td class="td-basic"><span class ="label {{serviceRowStatus.estadoColor}} taxi-movil">{{taxiMovil}}</span></td>
+						<td class="td-basic"><span class ="taxi-placa">{{taxiPlaca}}</span></td>
+
+						<td>{{comments}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>

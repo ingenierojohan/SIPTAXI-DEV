@@ -166,6 +166,9 @@ Template.tabServicesActualRow.helpers({
 	},
 
 	countService : function(){
+		if(!this.serviceNum){
+			return;
+		}
 		return countService = {
 			total : numeral(this.serviceNum.total).format('0,0'),
 			day : numeral(this.serviceNum.day).format('0,0')

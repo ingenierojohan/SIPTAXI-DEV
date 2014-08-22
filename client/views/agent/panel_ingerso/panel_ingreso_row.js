@@ -73,6 +73,15 @@ Template.panelIngresoRow.events({
 			else{
 				var time = services[key].timeAllocate;
 			}
+
+			// Validamos Si existe el ServiceNum
+			if(!services[key].serviceNum){
+				var serviceNumero="????";
+			}
+			else{
+				var serviceNumero = services[key].serviceNum.total
+			}
+
 			var timeFormat = moment(time).format("ddd DD MMM [de] YYYY hh:mm a");
 			var estado = evaluateStatus(services[key].status);
 			html += '<div class="span6">\
@@ -80,9 +89,9 @@ Template.panelIngresoRow.events({
 					<table class ="table table-bordered table-condensed">\
 						<tr><td><strong>'+ultimoOpenultimo[key]+'</strong></td></tr>\
 						<tr><td>'+ timeFormat +'</td></tr>\
-						<tr><td><strong>Servicio</strong>: '+ services[key].serviceNum.total +'</td></tr>\
-						<tr><td><strong>Movil</strong>: '+ services[key].taxiMovil +'</td></tr>\
-						<tr><td><strong>Placa</strong>: '+ services[key].taxiPlaca +'</td></tr>\
+						<tr><td><strong>SERVICIO</strong>: '+ serviceNumero +'</td></tr>\
+						<tr><td><strong>MOVIL</strong>: '+ services[key].taxiMovil +'</td></tr>\
+						<tr><td><strong>PLACA</strong>: '+ services[key].taxiPlaca +'</td></tr>\
 						<tr><td><strong>Agente</strong>: '+ services[key].agentName +'</td></tr>\
 						<tr><td><strong><span class="label label-'+estado.color+'">'+estado.desc+'</span></strong></td></tr>\
 					</table>\

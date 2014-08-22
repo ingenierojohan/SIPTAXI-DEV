@@ -14,4 +14,6 @@ spin
 moment
 fast-render
 numeral
-filter-collections
+reactive-table
+just-i18n
+font-awesome

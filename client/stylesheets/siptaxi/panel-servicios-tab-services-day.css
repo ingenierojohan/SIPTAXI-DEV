@@ -85,3 +85,22 @@
 }
 
 
+/*------------- REACTIVE TABLES ------------------------*/
+#tab-services-day-css table .reactive-table {
+	width:100%;
+}
+
+#tab-services-day-css table th{
+	font-size: 1em;
+	text-align: center;
+	padding: 0;
+}
+
+#tab-services-day-css input .reactive-table-input {
+	font-size: 3em;
+	padding: 0 0.2em;
+	font-weight: bold; 
+	width: 95%;
+	vertical-align: middle;
+	margin : 0;
+}

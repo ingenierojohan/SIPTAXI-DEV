@@ -124,6 +124,9 @@ UI.registerHelper('formatCustomerPhone', function(phone) {
 });
 //--------------------------------------------------------------------------------
 
+/*UI.registerHelper('servicesStatus', function(status) {
+	
+}*/
 
 
 //--------------------------------------------------------------------------------
