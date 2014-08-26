@@ -6,7 +6,7 @@ Template.tabServicesDay.servicesDay = function(){
 
 Template.tabServicesDay.tableSettings = function () {
 	return{
-		rowsPerPage: 20,
+		rowsPerPage: 6,
 		showFilter: true,
 		showNavigation: 'auto',
 		rowClass : function(data){
@@ -31,13 +31,15 @@ Template.tabServicesDay.tableSettings = function () {
 			{	key : 'serviceNum.total',
 				label : 'NRO',
 				sort: 'descending',
-				/*fn: function (value, object) { return numeral(value).format('0,0');}*/ // Numeral No genera Orden
+				sortByValue : true,
+				fn: function (value, object) { return numeral(value).format('0,0');} // Numeral No genera Orden
 			},
 
 			// SERVICES NUM DIA
 			{	key : 'serviceNum.day',
 				label : 'DIA',
-				/*fn: function (value, object) { return numeral(value).format('0,0');}*/
+				sortByValue : true,
+				fn: function (value, object) { return numeral(value).format('0,0');}
 			},
 
 			// AGENTE
@@ -64,10 +66,15 @@ Template.tabServicesDay.tableSettings = function () {
 			},
 
 			// PHONE
-			{ key : 'customerPhone',
+			{ key : 'telefono',
 				label : 'TELEFONO',
-				tmpl : Template.tabServicesDayPhone
-				/*fn: function (value, object) { return console.log('TO STRING', value);}*/
+				/*tmpl : Template.tabServicesDayPhone,*/
+				fn: function (value, object) { 
+					/*return console.log('TO STRING', value.toString());*/
+					var tel = object.customerPhone;
+					if (!tel) return
+					return object.customerPhone.toString();
+				},
 			},
 
 			// NOMBRE
