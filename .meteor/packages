@@ -4,16 +4,5 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-accounts-base
-accounts-password
-bootstrap
-email
-npm
-iron-router
-spin
-moment
-fast-render
-numeral
-reactive-table
-just-i18n
-font-awesome
+autopublish
+insecure
